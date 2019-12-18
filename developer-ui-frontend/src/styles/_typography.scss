@@ -1,0 +1,78 @@
+@import "~@material/typography/mdc-typography";
+/**
+*  adapted from https://github.com/material-components/material-components-web/blob/master/packages/mdc-typography (licensed unter MIT)
+*  Mixins could not be used because of 62.5% rem scaling and app base font-size: 14px (1.4rem) instead of 16px
+*/
+
+$mdc-typography-font-weight-values: (
+  thin: 100,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 700,
+  black: 900
+) !default;
+$htmlFontSize: 10px; // 62.5% Trick is used
+$defaultFontSize: 14px; // specified by the Material Specification
+@function pxToRem($pxVal) {
+  @return ($pxVal / $htmlFontSize) * ($defaultFontSize/ 14px) * 1rem;
+}
+h1 {
+  font-size: pxToRem(112px);
+  line-height: (128 / 112) * 1em;
+  font-weight: map-get($mdc-typography-font-weight-values, light);
+  letter-spacing: -0.04em;
+  text-decoration: inherit;
+  text-transform: inherit;
+}
+h2 {
+  font-size: pxToRem(56px);
+  line-height: (73 / 56) * 1em;
+  font-weight: map-get($mdc-typography-font-weight-values, light);
+  letter-spacing: -0.02em;
+  text-decoration: inherit;
+  text-transform: inherit;
+}
+h3 {
+  font-size: pxToRem(45px);
+  line-height: (48 / 45) * 1em;
+  font-weight: map-get($mdc-typography-font-weight-values, regular);
+  letter-spacing: normal;
+  text-decoration: inherit;
+  text-transform: inherit;
+}
+h4 {
+  font-size: pxToRem(34px);
+  line-height: (41 / 34) * 1em;
+  font-weight: map-get($mdc-typography-font-weight-values, regular);
+  letter-spacing: normal;
+  text-decoration: inherit;
+  text-transform: inherit;
+}
+h5 {
+  // "headline"
+  font-size: pxToRem(24px);
+  line-height: (32.5 / 24) * 1em;
+  font-weight: map-get($mdc-typography-font-weight-values, regular);
+  letter-spacing: normal;
+  text-decoration: inherit;
+  text-transform: inherit;
+}
+h6 {
+  // "title"
+  font-size: pxToRem(21px);
+  line-height: (24.5 / 21) * 1em;
+  font-weight: map-get($mdc-typography-font-weight-values, medium);
+  letter-spacing: normal;
+  text-decoration: inherit;
+  text-transform: inherit;
+}
+p {
+  // "body2"
+  font-size: pxToRem(14px);
+  line-height: (24 / 14) * 1em;
+  font-weight: map-get($mdc-typography-font-weight-values, regular);
+  letter-spacing: normal;
+  text-decoration: inherit;
+  text-transform: inherit;
+}

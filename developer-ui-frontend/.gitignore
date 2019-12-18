@@ -1,0 +1,18 @@
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
+#Subversion files
+.svn
+
+#Log files
+*.log
+log.txt
+
+#Node modules
+node_modules/
+node_modules
+node
+
+# build folder
+build

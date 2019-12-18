@@ -1,0 +1,58 @@
+@import "_globalVars.scss";
+
+@function mdc-typography-get-letter-spacing_($tracking, $font-size) {
+  @return $tracking / ($font-size * 16) * 1em;
+}
+
+$mdc-typography-font-weight-values: (
+  thin: 100,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 700,
+  black: 900
+) !default;
+
+@mixin customScrollbar(
+  $scrollbar-width,
+  $thumb-color,
+  $thumb-border-radius,
+  $track-color
+) {
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar {
+    background-color: $track-color;
+  }
+  &::-webkit-scrollbar:vertical {
+    width: $scrollbar-width;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: $scrollbar-width;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: $thumb-border-radius;
+    background-color: $thumb-color;
+  }
+  &::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+@mixin formConfigCard($width, $height) {
+  position: relative;
+  top: calc((100vh - #{$header-height} - 2px) / 2);
+  left: 50vw;
+  width: $width;
+  height: $height;
+  transform: translate(-1 * $width / 2, -1 * $height / 2);
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 4px;
+}
+@mixin body2Typo {
+  font-size: 1.4rem; // 14sp
+  line-height: 2rem; // 20sp
+  font-weight: map-get($mdc-typography-font-weight-values, regular);
+  letter-spacing: mdc-typography-get-letter-spacing_(0.25, 0.875);
+  text-decoration: inherit;
+  text-transform: inherit;
+}
