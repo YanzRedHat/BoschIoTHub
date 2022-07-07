@@ -111,7 +111,7 @@
     "jsoneditor-react": "^0.1.9",
     "lodash.range": "^3.2.0",
     "lodash.throttle": "^4.1.1",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "normalizr": "^3.2.4",
     "polished": "^1.9.3",
     "pretty-checkbox": "^3.0.3",
